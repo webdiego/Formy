@@ -2,15 +2,19 @@ const form = document.querySelector('form')
 const info = document.querySelector('.info')
 const body = document.querySelector('body')
 
-const usernameBorder= document.querySelector('#username')
-const firstNameBorder= document.querySelector('#firstName')
-const emailBorder = document.querySelector('#email')
+const username= document.querySelector('#username')
+const firstName= document.querySelector('#firstName')
+const email = document.querySelector('#email')
+const phone = document.querySelector('#phone')
+
 
 
 const usernamePattern = /^.{6,12}$/;
 const firstNamePattern = /^[a-zA-Z]{2,15}$/
 const emailPattern = 	
 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+const phonePattern = /^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$/
 
 
 
@@ -29,7 +33,8 @@ form.addEventListener('submit' , e => {
   if(usernamePattern.test(username.value) && firstNamePattern.test(firstName.value) && emailPattern.test(email.value) ===true){
 
       body.style.backgroundColor=' rgb(123, 223, 66)';
-      body.style.transition = 'all 3s'
+      body.style.transition = 'all 3s';
+     
   }else{
     body.style.backgroundColor='tomato';
     body.style.transition = 'all 3s'
@@ -46,16 +51,15 @@ form.username.addEventListener('keyup' , e=>{
 
 
   if(usernamePattern.test(username.value) ){
-    usernameBorder.style.borderColor ="#43aa8b" ,
-    usernameBorder.style.borderRadius="50px" 
-    usernameBorder.style.transition= "all 1s"
-    usernameBorder.style.backgroundColor="#43ca8b"
+    username.style.borderColor ="#43aa8b" ,
+    username.style.borderRadius="50px" 
+    username.style.transition= "all 1s"
+    username.style.backgroundColor="#43ca8b"
   }else{
-      usernameBorder.style.borderColor ="#e63946"
-      usernameBorder.style.borderRadius="10px" 
-      usernameBorder.style.transition= "all 1s"
-      usernameBorder.style.backgroundColor="tomato"
-
+      username.style.borderColor ="#e63946"
+      username.style.borderRadius="10px" 
+      username.style.transition= "all 1s"
+      username.style.backgroundColor="tomato"
     }
 
 
@@ -68,15 +72,15 @@ form.firstName.addEventListener('keyup' , e=>{
 
 
   if(firstNamePattern.test(firstName.value) ){
-    firstNameBorder.style.borderColor ="#43aa8b" ,
-    firstNameBorder.style.borderRadius="50px" 
-    firstNameBorder.style.transition= "all 1s"
-    firstNameBorder.style.backgroundColor="#43ca8b"
+    firstName.style.borderColor ="#43aa8b" ,
+    firstName.style.borderRadius="50px" 
+    firstName.style.transition= "all 1s"
+    firstName.style.backgroundColor="#43ca8b"
   }else{
-      firstNameBorder.style.borderColor ="#e63946"
-      firstNameBorder.style.borderRadius="10px" 
-      firstNameBorder.style.transition= "all 1s"
-      firstNameBorder.style.backgroundColor="tomato"
+      firstName.style.borderColor ="#e63946"
+      firstName.style.borderRadius="10px" 
+      firstName.style.transition= "all 1s"
+      firstName.style.backgroundColor="tomato"
 
     }
 
@@ -88,15 +92,35 @@ form.email.addEventListener('keyup' ,e =>{
 
 
   if(emailPattern.test(email.value) ){
-    emailBorder.style.borderColor ="#43aa8b" ,
-    emailBorder.style.borderRadius="50px" 
-    emailBorder.style.transition= "all 1s"
-    emailBorder.style.backgroundColor="#43ca8b"
+    email.style.borderColor ="#43aa8b" ,
+    email.style.borderRadius="50px" 
+    email.style.transition= "all 1s"
+    email.style.backgroundColor="#43ca8b"
   }else{
-      emailBorder.style.borderColor ="#e63946"
-      emailBorder.style.borderRadius="10px" 
-      emailBorder.style.transition= "all 1s"
-      emailBorder.style.backgroundColor="tomato"
+      email.style.borderColor ="#e63946"
+      email.style.borderRadius="10px" 
+      email.style.transition= "all 1s"
+      email.style.backgroundColor="tomato"
+
+    }
+
+
+
+})
+
+form.phone.addEventListener('keyup' ,e =>{ 
+
+
+  if(phonePattern.test(phone.value) ){
+    phone.style.borderColor ="#43aa8b" ,
+    phone.style.borderRadius="50px" 
+    phone.style.transition= "all 1s"
+    phone.style.backgroundColor="#43ca8b"
+  }else{
+      phone.style.borderColor ="#e63946"
+      phone.style.borderRadius="10px" 
+      phone.style.transition= "all 1s"
+      phone.style.backgroundColor="tomato"
 
     }
 

@@ -60,13 +60,22 @@ label{
 p{
   font-size: .8rem;
   letter-spacing: .1rem;
-  margin: 1rem;
+ width: 90%;
+ margin-bottom: .5rem;
+ text-align: center;
+ align-self: center;
 }
 #username{
   margin-bottom: .1rem;
 }
 
-
+#phone{
+  background: url(./img/au.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 220px;
+}
 
  .bounce-in-top {
 	-webkit-animation: bounce-in-top 1.1s both;
