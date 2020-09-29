@@ -1,11 +1,13 @@
 const form = document.querySelector('form')
 const info = document.querySelector('.info')
 const body = document.querySelector('body')
+const alert = document.querySelector('.alert')
 
 const username= document.querySelector('#username')
 const firstName= document.querySelector('#firstName')
 const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
+
 
 
 
@@ -34,16 +36,19 @@ form.addEventListener('submit' , e => {
 
       body.style.backgroundColor=' rgb(123, 223, 66)';
       body.style.transition = 'all 3s';
+     alert.style.display ='block';
+     alert.stye.transition ='all 2s'
+
      
-  }else{
-    body.style.backgroundColor='tomato';
-    body.style.transition = 'all 3s'
-  }
-  
+    }else{
+      body.style.backgroundColor='tomato';
+      body.style.transition = 'all 3s'
+    }
+
+ 
 
 
 })
-
 
 
 //on typing

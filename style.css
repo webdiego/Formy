@@ -57,7 +57,7 @@ label{
   letter-spacing: .2rem;
   font-weight: bold;
 }
-p{
+.info{
   font-size: .8rem;
   letter-spacing: .1rem;
  width: 90%;
@@ -185,6 +185,17 @@ p{
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
+}
+
+
+.alert{
+ background-color: teal;
+ width: 70%;
+ border-radius: 10px;
+ align-self: center;
+ color: white;
+ display: none;
+
 }
 
 
