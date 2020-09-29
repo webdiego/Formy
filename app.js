@@ -1,3 +1,19 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyBRUIfA58fZjy02kv0-Qkbno3VHUppZUWY",
+  authDomain: "formy-e0904.firebaseapp.com",
+  databaseURL: "https://formy-e0904.firebaseio.com",
+  projectId: "formy-e0904",
+  storageBucket: "formy-e0904.appspot.com",
+  messagingSenderId: "671413291583",
+  appId: "1:671413291583:web:0d004d2b289f0f70aec68a",
+  measurementId: "G-034ETTTNKL"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+let user = firebase.database().ref("infos");
+
 const form = document.querySelector('form')
 const info = document.querySelector('.info')
 const body = document.querySelector('body')
@@ -10,29 +26,26 @@ const phone = document.querySelector('#phone')
 
 
 
-
+//REGEX
 const usernamePattern = /^.{6,12}$/;
-const firstNamePattern = /^[a-zA-Z]{2,15}$/
-const emailPattern = 	
-/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-const phonePattern = /^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$/
+const firstNamePattern = /^[a-zA-Z]{2,15}$/;
+const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const phonePattern = /^04(\s?[0-9]{2}\s?)([0-9]{3}\s?[0-9]{3}|[0-9]{2}\s?[0-9]{2}\s?[0-9]{2})$/;
 
 
-
-const all = [
-  usernamePattern.test(username.value) ,
-  firstNamePattern.test(firstName.value),
-  emailPattern.test(email.value) 
-
-]
 
 //on submit
 
 form.addEventListener('submit' , e => {
   e.preventDefault()
-
-  if(usernamePattern.test(username.value) && firstNamePattern.test(firstName.value) && emailPattern.test(email.value) ===true){
+  
+  let username = document.querySelector('#username').value;
+  let firstName = document.querySelector('#firstName').value;
+  let email =document.querySelector('#email').value;
+  let phone = document.querySelector('#phone').value
+  saveInfo(username,firstName,email,phone)
+  
+  if(usernamePattern.test(username) && firstNamePattern.test(firstName) && emailPattern.test(email) ===true){
 
       body.style.backgroundColor=' rgb(123, 223, 66)';
       body.style.transition = 'all 3s';
@@ -44,8 +57,6 @@ form.addEventListener('submit' , e => {
       body.style.backgroundColor='tomato';
       body.style.transition = 'all 3s'
     }
-
- 
 
 
 })
@@ -133,3 +144,15 @@ form.phone.addEventListener('keyup' ,e =>{
 
 })
 
+
+function saveInfo (username,firstName,email,phone){
+
+  let newUser = user.push();
+
+  newUser.set({
+    username : username,
+    firstName : firstName,
+    email : email,
+    phone : phone
+  });
+}

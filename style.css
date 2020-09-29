@@ -197,6 +197,11 @@ label{
  display: none;
 
 }
+@media only screen {
+.alert{
+margin-bottom: 1rem;
+}
+}
 
 
 /*Button*/
@@ -208,7 +213,7 @@ input[type='submit'] {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .2rem;
- transform: t;
+ 
  
 }
 input[type='submit']:hover {
