@@ -1,6 +1,7 @@
 const form = document.querySelector('form')
 const info = document.querySelector('.info')
 const body = document.querySelector('body')
+
 const usernameBorder= document.querySelector('#username')
 const firstNameBorder= document.querySelector('#firstName')
 const emailBorder = document.querySelector('#email')
@@ -25,11 +26,7 @@ const all = [
 form.addEventListener('submit' , e => {
   e.preventDefault()
 
-   
-  const username= form.username.value;
-  const firstName = form.firstName.value;
-
-  if(all){
+  if(usernamePattern.test(username.value) && firstNamePattern.test(firstName.value) && emailPattern.test(email.value) ===true){
 
       body.style.backgroundColor=' rgb(123, 223, 66)';
       body.style.transition = 'all 3s'
@@ -106,3 +103,4 @@ form.email.addEventListener('keyup' ,e =>{
 
 
 })
+
