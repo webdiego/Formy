@@ -55,7 +55,8 @@ form.addEventListener('submit' , e => {
      
     }else{
       body.style.backgroundColor='tomato';
-      body.style.transition = 'all 3s'
+      body.style.transition = 'all 3s';
+      alert.style.display ='none';
     }
 
 
