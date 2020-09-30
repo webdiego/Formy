@@ -45,7 +45,7 @@ form.addEventListener('submit' , e => {
   let phone = document.querySelector('#phone').value
   saveInfo(username,firstName,email,phone)
   
-  if(usernamePattern.test(username) && firstNamePattern.test(firstName) && emailPattern.test(email) ===true){
+  if(usernamePattern.test(username) && firstNamePattern.test(firstName) && emailPattern.test(email) && phonePattern.test(phone) ===true){
 
       body.style.backgroundColor=' rgb(123, 223, 66)';
       body.style.transition = 'all 3s';
